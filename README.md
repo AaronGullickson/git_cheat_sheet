@@ -63,7 +63,7 @@ Before beginning, make sure that R is in the correct working directory:
 getwd()
 ```
 
-The working directory should be the same as the top-level of the directory that you want to make it into a git repository. Once you are sure that this is correct, simply type the following into the R console:
+The working directory should be the same as the top-level of the directory that you want to make into a git repository. Once you are sure that this is correct, simply type the following into the R console:
 
 ```r
 # Create an R project in the current working directory. Note that this command
@@ -81,4 +81,17 @@ usethis::use_git()
 # repository. Note that you need to change `private=TRUE` if you want this to
 # be a private repository (public by default)
 usethis:use_github(private=FALSE)
+```
+
+You are now fully set up and should be able to push and pull between the repositories.
+
+If you prefer to do this from the command line, you will have to create the new repository on GitHub first and copy the https address for that repository. You can then type into the command line (from the right working directory):
+
+```bash
+$ git init #initialize the repo
+$ git add .  #stage all files (you can also pick specific ones instead)
+$ git commit -m "initial commit" #make the initial commit
+$ git remote add origin <https address> #add the GitHub remote as origin
+$ git branch -M main #change default branch name to main
+$ git push -u origin main #push changes to the GitHub repository
 ```
