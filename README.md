@@ -4,6 +4,13 @@ I am compiling here a useful list of commands and procedures for working with gi
 
 Feel free to for this for your own use.
 
+**Table of Contents**
+
+- [Git set up](#git-set-up)
+- [Initialize a git repo and sync it with GitHub](#initialize-a-git-repo-and-sync-it-with-github)
+- [Clone a GitHub repository locally](#clone-a-github-repository-locally)
+- [Basic git workflow](#basic-git-workflow)
+
 ## Git set up
 
 To set up your your basic git configuration, you can `use_git_config`. From an R console:
