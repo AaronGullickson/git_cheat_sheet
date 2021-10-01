@@ -103,7 +103,7 @@ Instead of turning a local repository into a GitHub repository, you may want to 
 Once you have the https address, you can clone from the R console with:
 
 ```r
-create_from_github("<https address>", destdir="path to destination")
+usethis::create_from_github("<https address>", destdir="path to destination")
 ```
 
 If you do not set the `destdir`, then the repository will most likely be cloned to your desktop. If you would like to place the repository in the current working directory, then you can use `destdir="."`.
