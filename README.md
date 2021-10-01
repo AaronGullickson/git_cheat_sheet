@@ -1,6 +1,6 @@
 # Git/GitHub Cheat Sheet
 
-I am compiling here a useful list of commands and procedures for working with git and GitHub, particularly from RStudio using the [usethis](https://usethis.r-lib.org/) package (which must be installed first), but also directly from the command line. 
+I am compiling here a useful list of commands and procedures for working with git and GitHub, particularly from RStudio using the [usethis](https://usethis.r-lib.org/) package (which must be installed first), but also directly from the command line. I preface all command line entries with `$`.
 
 Feel free to for this for your own use.
 
