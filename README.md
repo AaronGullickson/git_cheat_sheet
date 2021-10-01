@@ -111,3 +111,11 @@ If you do not set the `destdir`, then the repository will most likely be cloned 
 Note that if you run this from RStudio, this repository will be initialized as an RStudio project as well. You can control this behavior with the argument `rstudio=TRUE/FALSE`.
 
 You can also clone from the new project wizard in RStudio. Just go to File > New Project. Then select Version Control > Git. From the final wizard, enter the https address of your GitHub repository and the "Create Project" button.
+
+If you prefer to clone from git itself, then from the command line (in the correct working directory):
+
+```bash
+git clone <https address>
+```
+
+Note that this will not set up your git repository as an R Project. You can do this manually from the new project wizard by by selecting the "Existing Directory" option.
