@@ -37,6 +37,20 @@ usethis::git_sitrep()
 
 ### Setting up a GitHub Personal Access Token
 
+Working with GitHub remotes now requires a personal access token (PAT) rather than just your GitHub password. This will include any push commands. You can create a appropriate on GitHub by going to your global user settings (not repository settings) and then Developer > Personal access token. However, I would recommend that instead you type the following from the R console:
 
+```r
+usethis::create_github_token()
+```
+
+This will take you to the same page on GitHub, but has the advantage that it will already check all the most common scopes that you need to work with GitHub. If you do it manually, you will need to check the appropriate scopes.
+
+Copy the PAT (you only get once chance!). Once you have your PAT, you can use it when you are prompted for your "password" when running git operations. To avoid this nuisance, you can instead cache your PAT so that it will be run automatically. From the R console:
+
+```r
+gitcreds::gitcreds_set()
+```
+
+Follow the prompts on-screen and paste your PAT when it is asked for. You should now be able to push to your GitHub repositories without authenticating every time.
 
 ## Initialize a git repo and sync it with GitHub
