@@ -96,6 +96,8 @@ $ git branch -M main #change default branch name to main
 $ git push -u origin main #push changes to the GitHub repository
 ```
 
+You can always run `usethis::git_sitrep()` from R to see the status of your current git repository.
+
 ## Clone a GitHub repository locally
 
 Instead of turning a local repository into a GitHub repository, you may want to clone an already existing GitHub repository to your local machine. To do this, you will need to copy the https address for the repository (given under the big green "Code" button on the main page of the repository).
@@ -115,7 +117,51 @@ You can also clone from the new project wizard in RStudio. Just go to File > New
 If you prefer to clone from git itself, then from the command line (in the correct working directory):
 
 ```bash
-git clone <https address>
+$ git clone <https address>
 ```
 
 Note that this will not set up your git repository as an R Project. You can do this manually from the new project wizard by by selecting the "Existing Directory" option.
+
+
+## Basic git workflow
+
+The basic git workflow is:
+
+1. Pull in changes from the remote.
+2. Do your work.
+3. Commit changes in small logical chunks.
+4. Push changes to the remote.
+
+In RStudio, you can use the git tab to accomplish all of these tasks. The commit dialog will allow you to make commits and the push and pull buttons will do pushing and pulling. 
+
+Note that the git tab will only show up in an R project. So if you cloned your repository outside of RStudio, you will need to use the new project wizard to make the existing directory an R project (basically adds an *.Rproj text file). Also, if you did not open a specific project through RStudio, you will not see the git tab even if you are in the correct working directory. To open the project, use the project menu in the upper right or just double-click the *.Rproj file in your system's file viewer. 
+
+If you want to use the basic git workflow from the command line, the first command you should know is:
+
+```bash
+$ git status
+```
+
+This will tell you the current status of your git repository and identify files with uncommitted changes and untracked files.
+
+You can stage and commit files with:
+
+```bash
+$ git add fileA fileb some_directory/fileC ...
+$ git commit -m "write a commit message"
+```
+
+To push and pull:
+
+```bash
+git push <remote name> <branch name>
+git pull <remote name> <branch name>
+```
+
+Assuming youre remote is named `origin` and your branch is the default `main` branch, you can push with:
+
+```bash
+git push origin main
+```
+
+Note that since `origin` is already set up as the default upstream repository for `main`, you can probably just type `git push` and `git pull` and be fine when on the `main` branch.
