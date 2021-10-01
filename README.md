@@ -85,7 +85,7 @@ usethis:use_github(private=FALSE)
 
 You are now fully set up and should be able to push and pull between the repositories.
 
-If you prefer to do this from the command line, you will have to create the new repository on GitHub first and copy the https address for that repository. You can then type into the command line (from the right working directory):
+If you prefer to do this from the command line, you will have to create the new repository on GitHub first and copy the https address for that repository (given to you when you set up the repository for the first time). You can then type into the command line (from the right working directory):
 
 ```bash
 $ git init #initialize the repo
@@ -95,3 +95,19 @@ $ git remote add origin <https address> #add the GitHub remote as origin
 $ git branch -M main #change default branch name to main
 $ git push -u origin main #push changes to the GitHub repository
 ```
+
+## Clone a GitHub repository locally
+
+Instead of turning a local repository into a GitHub repository, you may want to clone an already existing GitHub repository to your local machine. To do this, you will need to copy the https address for the repository (given under the big green "Code" button on the main page of the repository).
+
+Once you have the https address, you can clone from the R console with:
+
+```r
+create_from_github("<https address>", destdir="path to destination")
+```
+
+If you do not set the `destdir`, then the repository will most likely be cloned to your desktop. If you would like to place the repository in the current working directory, then you can use `destdir="."`.
+
+Note that if you run this from RStudio, this repository will be initialized as an RStudio project as well. You can control this behavior with the argument `rstudio=TRUE/FALSE`.
+
+You can also clone from the new project wizard in RStudio. Just go to File > New Project. Then select Version Control > Git. From the final wizard, enter the https address of your GitHub repository and the "Create Project" button.
