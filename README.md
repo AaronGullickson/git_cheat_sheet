@@ -32,7 +32,7 @@ This will add several items to your global .gitignore file that will be carried 
 You can always check on the current status of your git in R with:
 
 ```r
-usethis:git_sitrep()
+usethis::git_sitrep()
 ```
 
 ### Setting up a GitHub Personal Access Token
