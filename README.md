@@ -54,3 +54,31 @@ gitcreds::gitcreds_set()
 Follow the prompts on-screen and paste your PAT when it is asked for. You should now be able to push to your GitHub repositories without authenticating every time.
 
 ## Initialize a git repo and sync it with GitHub
+
+I assume you have a local directory with a project that you would like to turn into a git repository synced to GitHub. With the `usethis` package, this process is straightforward.
+
+Before beginning, make sure that R is in the correct working directory:
+
+```r
+getwd()
+```
+
+The working directory should be the same as the top-level of the directory that you want to make it into a git repository. Once you are sure that this is correct, simply type the following into the R console:
+
+```r
+# Create an R project in the current working directory. Note that this command
+# will open up a new RStudio window with your project loaded.
+usethis::create_project(".")
+
+# Initialize the current directory as a git repository. This command will give 
+# you a couple of prompts. Most importantly, it will ask you if you want to
+# make an initial commit of all the files in the directory. Only do this if 
+# you are sure all the files should be part of your repository. You can always
+# make the initial commit manually by choosing specific files later.
+usethis::use_git()
+
+# Create a repository on GitHub and push everything in this repo to that new
+# repository. Note that you need to change `private=TRUE` if you want this to
+# be a private repository (public by default)
+usethis:use_github(private=FALSE)
+```
