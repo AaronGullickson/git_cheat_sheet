@@ -30,7 +30,7 @@ $ git config --global user.name "Jane Doe"
 $ git config --global user.email jane@example.com
 ```
 
-Either way, I would also suggest that if you are on a MacOS system, you also the `core.editor` which is the default text editor to "nano" to avoid being stuck in [vim hell](https://qz.com/990214/a-million-people-have-visited-this-web-page-explaining-how-to-close-vim-a-notoriously-difficult-text-editing-program/).
+Either way, I would also suggest that if you are on a MacOS system, you also set the `core.editor` to "nano" to avoid being stuck in [vim hell](https://qz.com/990214/a-million-people-have-visited-this-web-page-explaining-how-to-close-vim-a-notoriously-difficult-text-editing-program/).
 
 If using the `usethis` package, I would also recommend running:
 
