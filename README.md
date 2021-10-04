@@ -188,6 +188,43 @@ $ git commit --amend -CHEAD
 
 This will amend the previous commit to include the newly staged changes. Alternatively, In RStudio, you can use the "Amend previous commit" checkbox below the commit message in the commit dialog.
 
+## Branching and Merging
+
+To create a new branch in RStudio, just click the purple branch button in the upper right of the git tab and provide a name. The advantage of this approach is that will create a corresponding branch on the remote reposistory as well. Next to this button, you will see a drop-down menu that shows you all branches on your local and remote repository and allows you to select the current branch. Always make sure you are on the right branch before committing!
+
+To switch between existing branches from the command line just use `git checkout`:
+
+```bash
+$ git checkout branch_name
+```
+
+You can also use `git branch` to see all existing branches locally.
+
+To create a new branch from the command line, just use the `git checkout` command with the `-b` argument:
+
+```bash
+git checkout -b new_branch_name
+```
+
+This will not create a corresponding branch on the remote, however. To add this branch to the remote, you must make a commit and then push that to the remote repository (assuming here that it is named "origin") using the `-u` option:
+
+```bash
+git push -u origin new_branch_name
+```
+
+The `-u` option tells git to use this remote repository as the default for all push commands from this branch, so in the future you should be able to just use `git push` to push changes to the remote repository.
+
+To merge changes from a branch back into the main branch (or any other branch), you must first switch back to the branch you want to merge changes into. Then you can use the `git merge` command with the name of the branch you want to merge:
+
+```bash
+$ git checkout main
+$ git merge new_branch_name
+```
+
+This will checkout the main branch and then merge all off the commits from the `new_branch_name` into `main`.
+
+Although you can merge from the command line, I highly recommend using [GitHub pull requests](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) to handle merging branches back into main in most cases.
+
 ## Undoing stuff in git
 
 You made some changes to files and now realize that you don't like those changes. How do you go back?
