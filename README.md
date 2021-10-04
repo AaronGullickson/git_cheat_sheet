@@ -161,14 +161,14 @@ $ git commit -m "write a commit message"
 To push and pull:
 
 ```bash
-git push <remote name> <branch name>
-git pull <remote name> <branch name>
+$ git push <remote name> <branch name>
+$ git pull <remote name> <branch name>
 ```
 
 Assuming youre remote is named `origin` and your branch is the default `main` branch, you can push with:
 
 ```bash
-git push origin main
+$ git push origin main
 ```
 
 Note that since `origin` is already set up as the default upstream repository for `main`, you can probably just type `git push` and `git pull` and be fine when on the `main` branch.
