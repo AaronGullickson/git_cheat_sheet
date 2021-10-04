@@ -174,6 +174,49 @@ $ git push origin main
 
 Note that since `origin` is already set up as the default upstream repository for `main`, you can probably just type `git push` and `git pull` and be fine when on the `main` branch.
 
+## Undoing stuff in git
+
+You made some changes to files and now realize that you don't like those changes. How do you go back?
+
+### Situation 1: You did not commit the changes yet
+
+If you have not yet committed the changes, then you can checkout the file again from the most recent commit. This will wipe all changes to that file since you last committed. To checkout a file called some_script.R from the command line:
+
+```bash
+$ git checkout -- some_script.R
+```
+
+From RStudio, just right click the file in the git tab and choose "Revert...", although this is technically not a revert (see below).
+
+### Situation 2: You committed the change but did not yet push it
+
+If you are in this situation, then you can reset back to a good commit before the bad commit. Under a normal "soft" reset all of the work in commits since the reset will be left as uncommitted changes, so you will not lose other work, but you will have to recommit it.
+
+As an example, lets say your last good commit before the commit with the work you want to remove is `ce65533`, then:
+
+```bash
+$ git reset ce65533
+```
+
+All of the work since `ce65533` (including the work you want to remove) will then be left as uncommitted changes which you can selectively recommit.
+
+If you are ok with losing all of the work in commits since commit `ce65533`, then you can do a "hard" reset. This will delete all of the changes in subsequent commits after `ce65533`. Be **very careful** with this option as that work will be gone permanently. If your bad commit is buried pretty deep in your commit history, this is almost certainly not a good option. You might want to instead consider `git revert`, discussed in the next section.
+
+```bash
+$ git reset --hard ce65533
+```
+
+### Situation 3: You committed the change and pushed it
+
+In this case, instead of removing the change, we will do a `git revert` which will add a new commit that "inverts" the original commit. This is generally the safest option for undoing things, but also adds another commit. Lets say that the changes you want to revert are in commit `39c398c`. To revert these changes:
+
+```bash
+$ git revert 39c398c
+```
+
+This will add a new commit that basically does the opposite of whatever is done in commit `39c398c`. Keep in mind that given other change to your code since that commit, this inversion might break your code (if for example, other code depends on an object that this commit created).
+
+
 ## The .gitignore file
 
 The .gitignore file is a text file in you top-level directory that will tell git what files to ignore when indicating what files should be put under version control. This file will be created automatically if you create the repository through RStudio. If you initialize git from the command line, you will have to create it manually. 
@@ -233,10 +276,10 @@ Here is a starter gitignore file for data science:
 
 ### Removing a file from version control
 
-If a file has already been committed to version control, then ignoring that file or its type will have no affect on that particular file. To get git to stop tracking changes to it, you must tell git to stop tracking it:
+If a file has already been committed to version control, then ignoring that file or its type will have no affect on that particular file. To get git to stop tracking changes to a file called some_script.R, you must tell git to stop tracking it:
 
 ```bash
-$ git rm --cached specific_file_path
+$ git rm --cached some_script.R
 ```
 
 You can then delete the file locally and commit the deletion and git will no longer track this file.
