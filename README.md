@@ -13,6 +13,7 @@ Feel free to for this for your own use.
 - [Branching and merging](#branching-and-merging)
 - [Undoing stuff in git](#undoing-stuff-in-git)
 - [The .gitignore file](#the-gitignore-file)
+- [Useful links](#useful-links)
 
 ## Git set up
 
