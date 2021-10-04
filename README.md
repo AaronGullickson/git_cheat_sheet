@@ -10,7 +10,9 @@ Feel free to for this for your own use.
 - [Initialize a git repo and sync it with GitHub](#initialize-a-git-repo-and-sync-it-with-github)
 - [Clone a GitHub repository locally](#clone-a-github-repository-locally)
 - [Basic git workflow](#basic-git-workflow)
-- [The .gitignore file](https://github.com/AaronGullickson/git_cheat_sheet#the-gitignore-file)
+- [Branching and merging](#branching-and-merging)
+- [Undoing stuff in git](#undoing-stuff-in-git)
+- [The .gitignore file](#the-gitignore-file)
 
 ## Git set up
 
@@ -188,7 +190,7 @@ $ git commit --amend -CHEAD
 
 This will amend the previous commit to include the newly staged changes. Alternatively, In RStudio, you can use the "Amend previous commit" checkbox below the commit message in the commit dialog.
 
-## Branching and Merging
+## Branching and merging
 
 To create a new branch in RStudio, just click the purple branch button in the upper right of the git tab and provide a name. The advantage of this approach is that will create a corresponding branch on the remote reposistory as well. Next to this button, you will see a drop-down menu that shows you all branches on your local and remote repository and allows you to select the current branch. Always make sure you are on the right branch before committing!
 
