@@ -240,3 +240,12 @@ $ git rm --cached specific_file_path
 ```
 
 You can then delete the file locally and commit the deletion and git will no longer track this file.
+
+## Useful links
+
+* [GitHub-flavored markdown cheat sheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+* [GitHub's git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+* [Happy Git and GitHub for the useR by Jenny Bryan](https://happygitwithr.com/)
+* [Why Jenny Bryan will burn down your computer, eg don't use absolute paths](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
+* [Kieran Healy's The Plain Person’s Guide to Plain Text Social Science](https://kieranhealy.org/publications/plain-person-text/)
+* [Code and Data for the Social Sciences, by Matthew Gentzkow and Jesse M. Shapiro](https://web.stanford.edu/~gentzkow/research/CodeAndData.xhtml)
