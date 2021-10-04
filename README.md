@@ -10,6 +10,7 @@ Feel free to for this for your own use.
 - [Initialize a git repo and sync it with GitHub](#initialize-a-git-repo-and-sync-it-with-github)
 - [Clone a GitHub repository locally](#clone-a-github-repository-locally)
 - [Basic git workflow](#basic-git-workflow)
+- [The .gitignore file](https://github.com/AaronGullickson/git_cheat_sheet#the-gitignore-file)
 
 ## Git set up
 
