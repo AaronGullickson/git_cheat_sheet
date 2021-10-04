@@ -172,3 +172,70 @@ git push origin main
 ```
 
 Note that since `origin` is already set up as the default upstream repository for `main`, you can probably just type `git push` and `git pull` and be fine when on the `main` branch.
+
+## The .gitignore file
+
+The .gitignore file is a text file in you top-level directory that will tell git what files to ignore when indicating what files should be put under version control. This file will be created automatically if you create the repository through RStudio. If you initialize git from the command line, you will have to create it manually. 
+
+If using RStudio, I recommend you run:
+
+```r
+usethis::git_vaccinate()
+```
+
+This will create a global default .gitignore file in your home directory which will be used as the default when you create any new git repository.
+
+You can use [globbing parameters](https://linux.die.net/man/7/glob) to identify types of files you might want to ignore. Some common cases are:
+
+```gitignore
+# ignore all files anywhere in your repository that end in .log
+*.log 
+
+# ignore all directories anywhere in your repository that are 
+# named logs
+**/logs
+
+# ignore all files ending in .log except thisone.log
+*.log
+!thisone.log
+
+# ignore any filed named debug log anywhere in the logs directory 
+# including subdirectories of that directories
+logs/**/debug.log
+```
+
+What should go into your gitignore file? Here are some possibilities:
+
+* Any system junk files like .DS_Store
+* Any files with sensitive/private information
+* Any built files that are created by the scripts
+
+Here is a starter gitignore file for data science:
+
+```gitignore
+# files added by usethis::git_vaccinate
+.httr-oauth
+.Rproj.user
+.Rhistory
+.Rdata
+.DS_Store
+# built files
+*.html
+*.pdf
+*.log
+# Ignore all the junk created by LaTeX
+*.aux
+*.out
+*.bbl
+*.ent
+```
+
+### Removing a file from version control
+
+If a file has already been committed to version control, then ignoring that file or its type will have no affect on that particular file. To get git to stop tracking changes to it, you must tell git to stop tracking it:
+
+```bash
+$ git rm --cached specific_file_path
+```
+
+You can then delete the file locally and commit the deletion and git will no longer track this file.
