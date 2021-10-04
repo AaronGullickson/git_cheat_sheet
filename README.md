@@ -174,6 +174,20 @@ $ git push origin main
 
 Note that since `origin` is already set up as the default upstream repository for `main`, you can probably just type `git push` and `git pull` and be fine when on the `main` branch.
 
+### Amending a commit
+
+Sometimes, you forget to put something into a commit. The most common case is that you had some unsaved changes in a file because you hadn't saved it recently and realize that after doing the commit. If you realize this before making other commits, you can amend your most recent commit to include the changes.
+
+You generally should only do this if you have not yet pushed to a remote. If you have pushed to a remote, then the commit histories in the two repositories will not be aligned and you will have to deal with some issues when you next try to pull. 
+
+Assuming you have not pushed, then to amend the previous commit, stage the changes you want to add and then type from the command line:
+
+```bash
+$ git commit --amend -CHEAD
+```
+
+This will amend the previous commit to include the newly staged changes. Alternatively, In RStudio, you can use the "Amend previous commit" checkbox below the commit message in the commit dialog.
+
 ## Undoing stuff in git
 
 You made some changes to files and now realize that you don't like those changes. How do you go back?
