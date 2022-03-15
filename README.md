@@ -91,7 +91,7 @@ usethis::use_git()
 # Create a repository on GitHub and push everything in this repo to that new
 # repository. Note that you need to change `private=TRUE` if you want this to
 # be a private repository (public by default)
-usethis:use_github(private=FALSE)
+usethis::use_github(private=FALSE)
 ```
 
 You are now fully set up and should be able to push and pull between the repositories.
