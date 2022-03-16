@@ -340,7 +340,7 @@ You can then delete the file locally and commit the deletion and git will no lon
 
 ## Useful links
 
-* [GitHub-flavored markdown cheat sheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+* [GitHub-flavored markdown cheat sheet](https://gist.github.com/roshith-balendran/d50b32f8f7d900c34a7dc00766bcfb9c)
 * [GitHub's git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 * [Happy Git and GitHub for the useR by Jenny Bryan](https://happygitwithr.com/)
 * [Why Jenny Bryan will burn down your computer, eg don't use absolute paths](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
